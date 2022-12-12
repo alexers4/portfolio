@@ -1,0 +1,505 @@
+
+/*--------------------------*/
+/*----- CSS RESET -----*/
+/*--------------------------*/
+* {
+    scroll-behavior: smooth;
+    border: 0 none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root{
+    --orange: #ff765e;
+    --darkblue: #141d2e;
+    --lightblue: #2d3c5c;
+}
+
+body { 
+    font-family:Arial, Helvetica, sans-serif;
+    background: var(--lightblue);
+}
+
+nav { 
+    background: var(--darkblue); 
+    position: fixed;
+    top: 0;
+    height: 80px; 
+    width: 100%;
+    z-index: 999;
+    border-bottom: solid 1px var(--orange);
+}
+        
+.logo{ 
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    width: 95px;
+}
+        
+nav ul{ 
+    float: right; 
+    margin-right:20px; 
+}
+            
+nav ul li{ 
+    display: inline-block; 
+    line-height:80px;
+    margin: 0 5px; 
+}
+                
+nav ul li a{
+     color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+}
+    a:hover{
+        background-color:  #ff765e;
+    }
+
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none; 
+}
+
+#check{
+    display: none; 
+}
+
+
+.titre-section {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    font-weight: 2000;
+    filter: drop-shadow(1px 2px 1px var(--orange));
+    color: white;
+  }
+  
+  .barre-section {
+    display: block;
+    margin: 5px auto;
+    width: 230px;
+    height: 2px;
+    border-radius: 5px;
+    border: none;
+    background: var(--orange);
+  }
+
+  .barre-sous-section {
+    display: block;
+    margin: 5px auto;
+    width: 130px;
+    height: 2px;
+    border-radius: 5px;
+    border: none;
+    background: var(--orange);
+  }
+
+
+
+/* ----------------------- ACCUEIL ----------------------- */
+
+.accueil{
+    margin: 150px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.apropos{
+    margin: 50px auto;
+    padding: 1rem;
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+    background: var(--darkblue);
+    border-radius: 20px;
+}
+
+.aproposleft{
+    display: flex;
+    margin: 0px auto;
+    width: 100%;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.photoprofil{
+    margin: auto;
+    width: 180px;
+    height: 180px;
+    background: var(--orange);
+    transform: translateY(-90px);
+    position: relative;
+    transition: 0.3s;
+}
+
+.photoprofil:hover{
+    transform: translateY(-100px);
+    transition: 0.3s;
+}
+
+.photoprofil img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 170px;
+    height: 170px;
+    transform: translate(-50%,-50%);
+}
+
+.descpro{
+    margin: auto;
+    display: flex;
+    padding: 1rem;
+    transform: translateY(-25px);
+    color: white;
+}
+
+.aproposright{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.btn {
+    margin: 0px auto;
+    border: solid 1px var(--orange);
+    width: 100%;
+    z-index: 0;
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .btn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--orange);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn:hover::before {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    color: black;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+@media (max-width:800px){
+    .apropos{
+        flex-direction: column;
+    }
+}
+
+
+
+/* ----------------------- ETUDE ----------------------- */
+
+.etudes{
+    margin: 60px 0 0 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.etudes .titre-section {
+    margin: 100px 0 0 0;
+}
+
+.liste-etudes {
+    margin: 50px auto;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%;
+    max-width: 940px;
+    color: white;
+    border-radius: 20px;
+    gap: 40px;
+}
+
+.etude {
+    width: 400px;
+    height: 280px;
+    padding: 1rem;
+    border-radius: 20px;
+    background: var(--darkblue);
+    position: relative;
+    transition: 0.5s;
+}
+
+.etude .titre{
+    margin: 20px auto;
+    text-align: center;
+}
+
+.etude .desc_etude {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100%;
+}
+
+.etude:hover {
+    transform: translateY(-30px);
+    transition: 0.5s;
+}
+
+
+/* ----------------------- COMPETENCE ----------------------- */
+
+.competences{
+    margin: 60px 0 0 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.competences .titre-section {
+    margin: 100px 0 0 0;
+}
+
+.liste-competences {
+    margin: 50px auto;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 1000px;
+    gap: 30px;
+    color: white;
+}
+
+.competence {
+    width: 250px;
+    height: 250px;
+    padding: 1rem;
+    background: var(--darkblue);
+    position: relative;
+}
+
+
+.competence:before,
+.competence:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.competence:before {
+  border-color: var(--orange);
+  border-left-width: 2px;
+  border-top-width: 2px;
+  left: -5px;
+  top: -5px;
+}
+
+.competence:after {
+  border-bottom-width: 2px;
+  border-color: var(--orange);
+  border-right-width: 2px;
+  bottom: -5px;
+  right: -5px;
+}
+
+.competence:hover:before,
+.competence:hover:after {
+  height: 80%;
+  width: 80%;
+}
+
+.competence h3{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+
+
+
+/* ----------------------- TRAVAUX ----------------------- */
+
+.travaux{
+    margin: 60px 0 0 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.travaux .titre-section {
+    margin: 100px 0 0 0;
+}
+
+.liste-travaux {
+    margin: 50px auto;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%;
+    max-width: 1000px;
+    gap: 30px;
+    color: white;
+}
+
+.trav {
+    width: 250px;
+    height: 400px;
+    padding: 1rem;
+    background: var(--darkblue);
+    position: relative;
+    border-radius: 20px;
+}
+
+.trav .titre{
+    margin: 20px auto;
+    text-align: center;
+}
+
+.trav .desc_trav {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100%;
+}
+
+.trav .titre .barre-sous-section {
+    width: 50px;
+}
+
+.trav .btn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+}
+
+.trav .btn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 100%;
+    background: var(--orange);
+    transition: all 0.3s ease-in-out;
+    border-radius: 20px;
+}
+  
+.btn:hover::before {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.trav:hover {
+    transform: translateY(-30px);
+    transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+/*--------------------------*/
+/*----- MEDIA QUERRY -----*/
+/*--------------------------*/
+
+@media (max-width: 952px){
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display: block; 
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left: -100%;
+        top: 80px;
+        transition: all .5s;
+        text-align: center;
+        background-color: #2c3e50;
+    }
+        nav ul li{
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+            nav ul li a{
+                font-size: 20px;
+            }
+                a:hover,a.active{
+                    background: none;
+                    color: #0082e6;
+                }
+
+        #check:checked ~ ul{
+            left: 0;
+        }
+}
+
+@media (max-width:525px) {
+    .titre-section {
+      font-size: max(5vw,15px);
+    }
+  
+    .barre-section {
+      width: 115px;
+    }
+  
+    .barre-sous-section {
+      width: 70px;
+    }
+}
